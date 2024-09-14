@@ -106,9 +106,10 @@ for epoch in range(epochs):
 
 
     
-
+#看模型的重构能力
   b=gen(x_fixed)[2]
   b=b.detach()
+# 看模型的生成能力  
   c=gen.decoder(z_fixed)
   c=c.detach()
   show_and_save('MNISTrec_noise_epoch_%d.png' % epoch ,make_grid((c*0.5+0.5).cpu(),8))
