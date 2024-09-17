@@ -59,13 +59,13 @@ for epoch in range(epochs):
     optim_Dis.step()
 
 
-    output = discrim(datav)[0]
-    errD_real = criterion(output, ones_label)
-    output = discrim(rec_enc)[0]
-    errD_rec_enc = criterion(output, zeros_label)
-    output = discrim(x_p_tilda)[0]
-    errD_rec_noise = criterion(output, zeros_label1)
-    gan_loss = errD_real + errD_rec_enc + errD_rec_noise
+    # output = discrim(datav)[0]
+    # errD_real = criterion(output, ones_label)
+    # output = discrim(rec_enc)[0]
+    # errD_rec_enc = criterion(output, zeros_label)
+    # output = discrim(x_p_tilda)[0]
+    # errD_rec_noise = criterion(output, zeros_label1)
+    # gan_loss = errD_real + errD_rec_enc + errD_rec_noise
     
 
     x_l_tilda = discrim(rec_enc)[1]
