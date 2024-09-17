@@ -23,8 +23,11 @@ alpha=0.1
 gamma=15
 
 criterion=nn.BCELoss().to(device)
+# vae中编码器梯度更新
 optim_E=torch.optim.RMSprop(gen.encoder.parameters(), lr=lr)
+# vae中解码器梯度更新
 optim_D=torch.optim.RMSprop(gen.decoder.parameters(), lr=lr)
+# 判别器梯度更新
 optim_Dis=torch.optim.RMSprop(discrim.parameters(), lr=lr*alpha)
 z_fixed=Variable(torch.randn((64,128))).to(device)
 x_fixed=Variable(real_batch[0]).to(device)
